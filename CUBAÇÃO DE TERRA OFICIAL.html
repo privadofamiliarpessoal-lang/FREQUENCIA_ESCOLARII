@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cubação de Terra — Área pelo Perímetro</title>
+<meta name="theme-color" content="#153524">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Cubação de Terra">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFhUlEQVR4nO3cO5LbRhhFYcilLWgHipQrU+RVOHGg1KXlTDlVoMSrcKQ1aD0OUIWiCdxmA+jH/zhf4LLHMzQ9PLwAOBy9+/D54wIc+W32HYBdxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARB6T3s++AFW8/3h7/8duf32bdEztYjmXZlXH4kYSIQ3ZAH9njKBeQvI/UcdQ89pn7SB0HyogDEnFAIg5IqeOoeaUr86thqeNYXj32mctYiGPRBSQvYyEOFBAHL59LxAEpexz8bKUgexwoSB3Hfhj2VyiZxyN1HCjLG4eaDcZjkzcOvJQ0jvLZBuOxShoHamSMo+YihfFYcsaBSuniqJkN9fFs45EuDtTLFUf9bKh/m2o8csWBUxLFcXY21OfkGY8scbR9RJP0kSWOvfq3iKZ9M2mKOK4dUMqfn2E8UsSBa+LHcX821FeFH4/4ceCy4HG0mg31tbHHI3gcuCNyHG1nQ91C4PGIHAduChtHj9lQtxN1PMLGgftixtFvNtSthRyPmHGgiYBx9J4NdZvxxiNgHGglWhxjZkPdcrDxiBYHGgoVx8jZULcfaTxCxYG24sRRmI1PX79sH3z8+yYCj0ecOJS1hv1f8VKQOGrONvrtR9TxiBBH4ZEoRNB7PwL0ESGOvfWpPPLwEfLXF9zHcefylYNLmfs4lMoHnpPTAt9xqNk4fMh/ff95eCMN+wg2Hr7jOGtAH5E4juPabPTuI9J4OI7jUM0BRfWBJ17jOJyN+mf/YR+MxxOvcdRTO9G1jxhcxlE/GxeOIE36iDEeLuPYu1YGFy9l/uJo+46efn0EGA9/cezdPKBw8aI4i2P/5Pv733/2n3b28e50cup9PJzF0Q8XL3ue4ug0G+UvvNmH6/HwFMeTtmUUpN0PN3GMecL1uHjxOx5u4njSbzZ48WPjI46np1rvA0rzY5PT8fARx3hcvCwu4hg8G+XbvNyHx/GwHsesMgoa7ofxPqzH8eiwjK7anpy6+/UF03HUPLF6z0bvPiyPh+k4Hk08oKT9yZzdOB6fUtNPNRqenDoaD7txWKP6CHx9azQOU7Px0tk+vIyH0Tg2psoo/HdD7ofFOGw+jVblPuoTcTEeFuPYmJqNyjsQaULeffj8cfZ9+J/tCWSzjEeFDirv5/g//vAU08thXPhTEFvL4Wg2HqkUau6w5fGwuBy+yljivj/IUBwGT9frFfooJ2L5ssVQHCt3s7GJdwpiJY716eK3jNW1PsyOh5U4woi0HyauVmLMxpOzlzAGL1usLEewMpYbp6h2zI/j7cfb+Pf/jXHqEGPwzGN+HIrr2di4PgWZHIeajRhlrOr7sDYeM+PIUMbq1/efl19FndiH3cNKPDV9TL9CeTTtUjbPbDyp+UG/kcvaacuRs4zF1SnqnDimX6TN9bIPI2emc+JIOxubO6eow0yIo9UfNRxAoQ8L48HVymSFPqa/cDw6DmZjr/C//9TH4PEYGgdlKPV9jMRhxYrKPkaOx7g4mI2XCpcwU/Zj0CuklHFK4Wr2r9//WEa9YDpiOexcuHth5BRk2jkHs1FW7mPMmUf3OA5nY91GlE3fj77nHKoMUz+Ytu/Or1ve8b7rrSvJf/B2weFUfPr6pWsfHZeDA0pbhUNJp0R6nXNQRnOF716n60FeIfVkcB9d4mA2+lHfxh5Hll7nHE99UEZzj6cgnc45Bl3K8pJXD72/vX3POdY7TRmd9P72mvgte9jE1Qok4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oD0H2LesCQfOK14AAAAAElFTkSuQmCC">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFhUlEQVR4nO3cO5LbRhhFYcilLWgHipQrU+RVOHGg1KXlTDlVoMSrcKQ1aD0OUIWiCdxmA+jH/zhf4LLHMzQ9PLwAOBy9+/D54wIc+W32HYBdxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARB6T3s++AFW8/3h7/8duf32bdEztYjmXZlXH4kYSIQ3ZAH9njKBeQvI/UcdQ89pn7SB0HyogDEnFAIg5IqeOoeaUr86thqeNYXj32mctYiGPRBSQvYyEOFBAHL59LxAEpexz8bKUgexwoSB3Hfhj2VyiZxyN1HCjLG4eaDcZjkzcOvJQ0jvLZBuOxShoHamSMo+YihfFYcsaBSuniqJkN9fFs45EuDtTLFUf9bKh/m2o8csWBUxLFcXY21OfkGY8scbR9RJP0kSWOvfq3iKZ9M2mKOK4dUMqfn2E8UsSBa+LHcX821FeFH4/4ceCy4HG0mg31tbHHI3gcuCNyHG1nQ91C4PGIHAduChtHj9lQtxN1PMLGgftixtFvNtSthRyPmHGgiYBx9J4NdZvxxiNgHGglWhxjZkPdcrDxiBYHGgoVx8jZULcfaTxCxYG24sRRmI1PX79sH3z8+yYCj0ecOJS1hv1f8VKQOGrONvrtR9TxiBBH4ZEoRNB7PwL0ESGOvfWpPPLwEfLXF9zHcefylYNLmfs4lMoHnpPTAt9xqNk4fMh/ff95eCMN+wg2Hr7jOGtAH5E4juPabPTuI9J4OI7jUM0BRfWBJ17jOJyN+mf/YR+MxxOvcdRTO9G1jxhcxlE/GxeOIE36iDEeLuPYu1YGFy9l/uJo+46efn0EGA9/cezdPKBw8aI4i2P/5Pv733/2n3b28e50cup9PJzF0Q8XL3ue4ug0G+UvvNmH6/HwFMeTtmUUpN0PN3GMecL1uHjxOx5u4njSbzZ48WPjI46np1rvA0rzY5PT8fARx3hcvCwu4hg8G+XbvNyHx/GwHsesMgoa7ofxPqzH8eiwjK7anpy6+/UF03HUPLF6z0bvPiyPh+k4Hk08oKT9yZzdOB6fUtNPNRqenDoaD7txWKP6CHx9azQOU7Px0tk+vIyH0Tg2psoo/HdD7ofFOGw+jVblPuoTcTEeFuPYmJqNyjsQaULeffj8cfZ9+J/tCWSzjEeFDirv5/g//vAU08thXPhTEFvL4Wg2HqkUau6w5fGwuBy+yljivj/IUBwGT9frFfooJ2L5ssVQHCt3s7GJdwpiJY716eK3jNW1PsyOh5U4woi0HyauVmLMxpOzlzAGL1usLEewMpYbp6h2zI/j7cfb+Pf/jXHqEGPwzGN+HIrr2di4PgWZHIeajRhlrOr7sDYeM+PIUMbq1/efl19FndiH3cNKPDV9TL9CeTTtUjbPbDyp+UG/kcvaacuRs4zF1SnqnDimX6TN9bIPI2emc+JIOxubO6eow0yIo9UfNRxAoQ8L48HVymSFPqa/cDw6DmZjr/C//9TH4PEYGgdlKPV9jMRhxYrKPkaOx7g4mI2XCpcwU/Zj0CuklHFK4Wr2r9//WEa9YDpiOexcuHth5BRk2jkHs1FW7mPMmUf3OA5nY91GlE3fj77nHKoMUz+Ytu/Or1ve8b7rrSvJf/B2weFUfPr6pWsfHZeDA0pbhUNJp0R6nXNQRnOF716n60FeIfVkcB9d4mA2+lHfxh5Hll7nHE99UEZzj6cgnc45Bl3K8pJXD72/vX3POdY7TRmd9P72mvgte9jE1Qok4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oD0H2LesCQfOK14AAAAAElFTkSuQmCC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+:root{
+  --verde-900:#153524; --verde-800:#1f4d36; --verde-700:#2f7a4d; --verde-600:#3f9660;
+  --verde-300:#a9d8b8; --verde-100:#e7f5ec; --branco:#ffffff;
+  --cinza-100:#f4f6f5; --cinza-200:#e7eae8; --cinza-400:#c3c9c5; --cinza-600:#8a938d; --cinza-800:#4b534e;
+  --texto:#1d2621; --erro:#b0452e; --alerta:#a3701f;
+  --fundo:var(--cinza-100); --superficie:var(--branco); --borda:var(--cinza-200);
+  --sombra:0 1px 2px rgba(21,53,36,.06), 0 4px 14px rgba(21,53,36,.06); --raio:14px;
+  --fonte-display:'Space Grotesk',sans-serif; --fonte-corpo:'Inter',sans-serif; --fonte-mono:'IBM Plex Mono',monospace;
+}
+[data-tema="escuro"]{
+  --fundo:#0f1613; --superficie:#182019; --borda:#2a352d; --texto:#e7ede9;
+  --cinza-100:#182019; --cinza-200:#2a352d; --cinza-400:#3c4a41; --cinza-600:#8a978e; --cinza-800:#c7d2cc;
+  --verde-100:#16281e; --sombra:0 1px 2px rgba(0,0,0,.3), 0 4px 18px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{font-family:var(--fonte-corpo);background:var(--fundo);color:var(--texto);min-height:100vh;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--fonte-display);margin:0 0 4px;color:var(--verde-800);}
+[data-tema="escuro"] h1,[data-tema="escuro"] h2,[data-tema="escuro"] h3{color:var(--verde-300);}
+p{margin:0 0 8px;line-height:1.55;}
+button{font-family:var(--fonte-corpo);cursor:pointer;}
+input,select{font-family:var(--fonte-mono);}
+
+header.topo{
+  background:var(--verde-900);color:#eaf3ee;padding:20px 26px;display:flex;align-items:center;
+  justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.marca{display:flex;align-items:center;gap:10px;}
+.marca-texto strong{display:block;font-family:var(--fonte-display);font-size:16px;}
+.marca-texto span{display:block;font-size:11px;color:var(--verde-300);letter-spacing:.4px;}
+.chave-tema{display:flex;align-items:center;gap:8px;font-size:13px;}
+.toggle{width:38px;height:21px;border-radius:20px;background:rgba(255,255,255,.25);position:relative;border:none;flex-shrink:0;}
+.toggle::after{content:'';position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;background:#fff;transition:left .18s;}
+.toggle.ligado{background:var(--verde-600);}
+.toggle.ligado::after{left:19px;}
+
+main{max-width:1080px;margin:0 auto;padding:26px 22px 60px;}
+.cabecalho-pagina{margin-bottom:20px;}
+.eyebrow{font-family:var(--fonte-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--verde-700);font-weight:600;}
+[data-tema="escuro"] .eyebrow{color:var(--verde-300);}
+
+.grade{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;}
+@media(max-width:920px){.grade{grid-template-columns:1fr;}}
+
+.cartao{background:var(--superficie);border:1px solid var(--borda);border-radius:var(--raio);padding:20px 22px;box-shadow:var(--sombra);margin-bottom:20px;}
+.cartao h3{font-size:15px;display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.cartao h3 .badge-num{width:22px;height:22px;border-radius:6px;background:var(--verde-100);color:var(--verde-800);font-size:12px;font-family:var(--fonte-mono);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+[data-tema="escuro"] .badge-num{background:var(--verde-800);color:var(--verde-300);}
+
+.campo{margin-bottom:13px;}
+.campo label{display:block;font-size:12.5px;font-weight:600;color:var(--cinza-800);margin-bottom:5px;}
+.campo input[type=text],.campo input[type=number],.campo input[type=date]{
+  width:100%;padding:9px 11px;border:1px solid var(--cinza-400);border-radius:8px;background:var(--fundo);color:var(--texto);font-size:13.5px;
+}
+.campo input:focus{outline:2px solid var(--verde-600);outline-offset:1px;border-color:var(--verde-600);}
+.linha-campos{display:flex;gap:10px;}
+.linha-campos .campo{flex:1;}
+
+.unidade-opcoes{display:flex;gap:10px;margin-bottom:4px;}
+.unidade-opcao{
+  flex:1;display:flex;flex-direction:column;gap:2px;padding:10px 12px;border:1px solid var(--cinza-400);
+  border-radius:10px;cursor:pointer;transition:border-color .15s,background .15s;
+}
+.unidade-opcao:hover{border-color:var(--verde-600);}
+.unidade-opcao.selecionada{border-color:var(--verde-700);background:var(--verde-100);}
+[data-tema="escuro"] .unidade-opcao.selecionada{background:rgba(63,150,96,.12);}
+.unidade-opcao strong{font-size:13.5px;}
+.unidade-opcao span{font-size:11.5px;color:var(--cinza-600);}
+.unidade-opcao input{display:none;}
+
+.tabela-lados{width:100%;border-collapse:collapse;font-size:13px;}
+.tabela-lados th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--cinza-600);padding:6px 6px;}
+.tabela-lados td{padding:4px 6px;}
+.tabela-lados input{width:100%;padding:7px 8px;border:1px solid var(--cinza-400);border-radius:7px;background:var(--fundo);color:var(--texto);font-size:13px;}
+.tabela-lados tr td:first-child{font-family:var(--fonte-mono);color:var(--verde-700);font-weight:600;width:34px;}
+
+.botao{border:none;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:transform .1s,filter .15s;}
+.botao:active{transform:scale(.97);}
+.botao-primario{background:var(--verde-700);color:#fff;}
+.botao-primario:hover{filter:brightness(1.08);}
+.botao-secundario{background:var(--verde-100);color:var(--verde-800);}
+[data-tema="escuro"] .botao-secundario{background:var(--verde-800);color:var(--verde-100);}
+.botao-secundario:hover{filter:brightness(1.1);}
+.botao-grande{padding:14px 22px;font-size:15px;width:100%;justify-content:center;}
+.linha-botoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
+
+.aviso{display:flex;gap:10px;padding:12px 14px;border-radius:10px;font-size:13px;line-height:1.5;background:#fbf3e2;border:1px solid #ecd9a8;color:#7a5411;margin-bottom:14px;}
+[data-tema="escuro"] .aviso{background:#2c2410;border-color:#4a3d17;color:#e9c876;}
+.aviso.critico{background:#fbe9e5;border-color:#f0c3b7;color:var(--erro);}
+[data-tema="escuro"] .aviso.critico{background:#2e1712;border-color:#5a2c20;color:#f0a690;}
+.aviso svg{flex-shrink:0;margin-top:1px;}
+
+.resultado-grade{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.resultado-item{background:var(--verde-100);border-radius:10px;padding:12px 14px;}
+[data-tema="escuro"] .resultado-item{background:rgba(63,150,96,.13);}
+.resultado-item .rotulo{font-size:11px;color:var(--verde-800);text-transform:uppercase;letter-spacing:.4px;font-weight:600;}
+[data-tema="escuro"] .resultado-item .rotulo{color:var(--verde-300);}
+.resultado-item .valor{font-family:var(--fonte-mono);font-size:19px;font-weight:600;color:var(--texto);margin-top:2px;}
+.resultado-item .valor small{font-size:12px;font-weight:500;color:var(--cinza-600);}
+.resultado-destaque{grid-column:1/-1;background:var(--verde-800);color:#fff;}
+.resultado-destaque .rotulo{color:var(--verde-300);}
+.resultado-destaque .valor{color:#fff;font-size:26px;}
+.selo{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.3px;padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle;}
+.selo.exato{background:#dff3e4;color:var(--verde-800);}
+.selo.estimativa{background:#fbf3e2;color:#7a5411;}
+[data-tema="escuro"] .selo.exato{background:rgba(63,150,96,.25);color:var(--verde-300);}
+[data-tema="escuro"] .selo.estimativa{background:#2c2410;color:#e9c876;}
+
+.canvas-wrap{background:repeating-linear-gradient(0deg,var(--cinza-100) 0 23px,var(--cinza-200) 23px 24px),
+             repeating-linear-gradient(90deg,var(--cinza-100) 0 23px,var(--cinza-200) 23px 24px);
+             border:1px solid var(--borda);border-radius:12px;overflow:hidden;}
+[data-tema="escuro"] .canvas-wrap{background:repeating-linear-gradient(0deg,#141c17 0 23px,#1f2b23 23px 24px),
+             repeating-linear-gradient(90deg,#141c17 0 23px,#1f2b23 23px 24px);}
+canvas{display:block;width:100%;height:auto;}
+
+.acordeao{border:1px solid var(--borda);border-radius:12px;margin-bottom:10px;overflow:hidden;background:var(--superficie);}
+.acordeao-cabecalho{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;cursor:pointer;font-weight:600;font-size:14px;}
+.acordeao-corpo{padding:0 16px 16px;font-size:13.5px;color:var(--cinza-800);line-height:1.6;display:none;}
+.acordeao.aberto .acordeao-corpo{display:block;}
+.acordeao-cabecalho svg{transition:transform .2s;}
+.acordeao.aberto .acordeao-cabecalho svg{transform:rotate(180deg);}
+
+footer.rodape-app{text-align:center;font-size:12px;color:var(--cinza-600);padding:20px 0 6px;}
+
+#folha-impressao{display:none;}
+@page{ size: A4; margin: 3cm 2cm 2cm 3cm; }
+@media print{
+  body *{visibility:hidden;}
+  #folha-impressao,#folha-impressao *{visibility:visible;}
+  #folha-impressao{display:block;position:absolute;top:0;left:0;width:100%;padding:0;}
+  header.topo,main>*:not(#folha-impressao){display:none!important;}
+}
+.rel-cab{display:flex;justify-content:space-between;border-bottom:3px solid var(--verde-800);padding-bottom:10px;margin-bottom:16px;}
+.rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;font-size:13px;margin-bottom:16px;}
+.rel-grid div span{display:block;font-size:10.5px;text-transform:uppercase;color:#666;letter-spacing:.4px;}
+</style>
+</head>
+<body data-tema="claro">
+
+<header class="topo">
+  <div class="marca">
+    <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+      <path d="M4 26 L16 6 L28 26 Z" stroke="#8fd8a8" stroke-width="2" fill="none"/>
+      <path d="M4 26 L14 12 L20 20 L28 26" stroke="#3f9660" stroke-width="2" fill="none"/>
+      <circle cx="16" cy="6" r="1.6" fill="#8fd8a8"/>
+    </svg>
+    <div class="marca-texto"><strong>Cubação de Terra</strong><span>ÁREA PELOS LADOS DO TERRENO</span></div>
+  </div>
+  <div style="font-size:11.5px;color:var(--verde-300);text-align:center;flex:1;min-width:160px;">Idealizado por Manoel Filho</div>
+  <div class="chave-tema">
+    <span id="rotuloTema">Modo escuro</span>
+    <button class="toggle" id="toggleTema" aria-label="Alternar modo escuro"></button>
+  </div>
+</header>
+
+<main>
+  <div class="cabecalho-pagina">
+    <div class="eyebrow">Cálculo simplificado</div>
+    <h1>Área do terreno a partir dos lados</h1>
+    <p>Informe apenas o comprimento de cada lado do terreno (3 ou mais), em metros ou em braças, e o app calcula a área e o perímetro.</p>
+  </div>
+
+  <div class="grade">
+    <!-- COLUNA ESQUERDA: entradas -->
+    <div>
+      <div class="cartao">
+        <h3><span class="badge-num">1</span> Identificação (opcional)</h3>
+        <div class="linha-campos">
+          <div class="campo"><label for="inpPropriedade">Nome da propriedade</label><input id="inpPropriedade" type="text" placeholder="Fazenda Boa Vista"></div>
+          <div class="campo"><label for="inpProprietario">Proprietário</label><input id="inpProprietario" type="text" placeholder="Nome do proprietário"></div>
+        </div>
+        <div class="linha-campos">
+          <div class="campo"><label for="inpMunicipio">Município / UF</label><input id="inpMunicipio" type="text" placeholder="Ex: Teotônio Vilela / AL"></div>
+          <div class="campo"><label for="inpData">Data</label><input id="inpData" type="date"></div>
+        </div>
+      </div>
+
+      <div class="cartao">
+        <h3><span class="badge-num">2</span> Unidade de medida</h3>
+        <div class="unidade-opcoes">
+          <label class="unidade-opcao selecionada" id="opcMetros">
+            <input type="radio" name="unidade" value="metro" checked>
+            <strong>Metros (m)</strong>
+            <span>Medida linear padrão</span>
+          </label>
+          <label class="unidade-opcao" id="opcBracas">
+            <input type="radio" name="unidade" value="braca">
+            <strong>Braças</strong>
+            <span>1 braça = 2,20 m</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="cartao">
+        <h3><span class="badge-num">3</span> Lados do terreno</h3>
+        <div class="campo" style="max-width:180px;">
+          <label for="inpLados">Quantidade de lados</label>
+          <input id="inpLados" type="number" min="3" max="30" value="4">
+        </div>
+        <table class="tabela-lados">
+          <thead><tr><th></th><th id="cabecalhoUnidade">Comprimento (m)</th></tr></thead>
+          <tbody id="corpoLados"></tbody>
+        </table>
+        <div id="avisoLados"></div>
+        <div class="linha-botoes">
+          <button class="botao botao-primario botao-grande" id="btnCalcular">Calcular área</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLUNA DIREITA: resultados -->
+    <div>
+      <div class="cartao">
+        <h3><span class="badge-num">✓</span> Resultado</h3>
+        <div id="semResultado"><p style="color:var(--cinza-600);">Preencha os lados e clique em "Calcular área".</p></div>
+        <div id="blocoResultado" style="display:none;">
+          <div class="resultado-grade">
+            <div class="resultado-item resultado-destaque">
+              <div class="rotulo">Área <span id="seloArea"></span></div>
+              <div class="valor" id="valArea">—</div>
+            </div>
+            <div class="resultado-item">
+              <div class="rotulo">Área em hectares</div>
+              <div class="valor" id="valAreaHa">—</div>
+            </div>
+            <div class="resultado-item">
+              <div class="rotulo">Perímetro</div>
+              <div class="valor" id="valPerimetro">—</div>
+            </div>
+            <div class="resultado-item">
+              <div class="rotulo">Número de lados</div>
+              <div class="valor" id="valNLados">—</div>
+            </div>
+            <div class="resultado-item" style="grid-column:1/-1;">
+              <div class="rotulo">Área em tarefas</div>
+              <div class="valor" id="valTarefas">—</div>
+              <select id="selRegiaoTarefa" style="margin-top:8px;width:100%;padding:6px 8px;border:1px solid var(--cinza-400);border-radius:7px;background:var(--fundo);color:var(--texto);font-family:var(--fonte-corpo);font-size:12.5px;">
+                <option value="3025">Alagoas / Sergipe — tarefa de 25×25 braças (3.025 m²)</option>
+                <option value="3630">Ceará — tarefa de 3.630 m²</option>
+                <option value="4356">Bahia — tarefa de 30×30 braças (4.356 m²)</option>
+              </select>
+            </div>
+          </div>
+          <div id="observacaoMetodo" style="margin-top:14px;font-size:13px;color:var(--cinza-800);"></div>
+        </div>
+      </div>
+
+      <div class="cartao" id="cartaoEsboco" style="display:none;">
+        <h3><span class="badge-num">◇</span> Esboço do terreno</h3>
+        <div class="canvas-wrap"><canvas id="canvasTerreno" width="600" height="420"></canvas></div>
+        <p style="font-size:12px;color:var(--cinza-600);margin-top:8px;margin-bottom:0;">Esboço ilustrativo, fora de escala real de ângulos — ver observação acima sobre o método usado.</p>
+      </div>
+
+      <div class="cartao" id="cartaoValor" style="display:none;">
+        <h3><span class="badge-num">R$</span> Valor do terreno</h3>
+        <div class="linha-campos">
+          <div class="campo">
+            <label for="inpValorTarefa">Valor de 1 tarefa (R$)</label>
+            <input id="inpValorTarefa" type="number" step="any" min="0" placeholder="Ex: 1500">
+          </div>
+        </div>
+        <div class="resultado-grade">
+          <div class="resultado-item resultado-destaque">
+            <div class="rotulo">Valor total do terreno</div>
+            <div class="valor" id="valTotalTerreno">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cartao" id="cartaoExportar" style="display:none;">
+        <h3><span class="badge-num">⇩</span> Exportar</h3>
+        <div class="linha-botoes">
+          <button class="botao botao-secundario" id="btnImprimir">Imprimir</button>
+          <button class="botao botao-secundario" id="btnExportarPDF">Exportar PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- AJUDA ---------- -->
+  <div class="cabecalho-pagina" style="margin-top:10px;">
+    <div class="eyebrow">Entenda o cálculo</div>
+    <h2>Como a área é calculada</h2>
+  </div>
+  <div class="acordeao aberto">
+    <div class="acordeao-cabecalho">Com 3 lados (triângulo) — resultado exato <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="acordeao-corpo">Um triângulo é a única forma poligonal que não se deforma: conhecendo os 3 lados, só existe um formato possível.
+    A área é calculada pela <strong>Fórmula de Heron</strong>: A = √(s(s−a)(s−b)(s−c)), onde s é o semiperímetro. Não há aproximação aqui — o resultado é exato.</div>
+  </div>
+  <div class="acordeao">
+    <div class="acordeao-cabecalho">Com 4 ou mais lados — estimativa (área máxima) <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="acordeao-corpo">A partir de 4 lados, o terreno deixa de ser rígido: os mesmos comprimentos podem ser "dobrados" em ângulos diferentes, formando áreas diferentes
+    com o mesmo perímetro. Sem informar os ângulos, diagonais ou coordenadas, é matematicamente impossível saber a área exata só pelos lados.<br><br>
+    Por isso, para 4 lados ou mais, este app calcula a <strong>maior área possível</strong> para aquele conjunto de lados: a que resultaria se o terreno formasse um
+    polígono convexo inscrito em um círculo (generalização da fórmula de Brahmagupta). Esse é um resultado matemático conhecido — entre todos os formatos possíveis
+    com os mesmos lados, o polígono "cíclico" é sempre o de maior área. Na prática, isso serve como um <strong>teto</strong>: a área real do seu terreno tende a
+    ser igual ou menor que o valor mostrado.<br><br>
+    Para uma medição exata com 4+ lados — inclusive para fins legais (georreferenciamento, escritura, INCRA) — é necessário registrar também os ângulos internos
+    ou as coordenadas dos vértices, com equipamento topográfico (GPS/GNSS ou estação total).</div>
+  </div>
+  <div class="acordeao">
+    <div class="acordeao-cabecalho">Área em tarefas <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="acordeao-corpo">A "tarefa" é uma medida agrária que varia bastante de região para região, por isso o app oferece um seletor. Em Alagoas e Sergipe,
+    a tarefa mais comum equivale a um quadrado de 25×25 braças = 3.025 m². No Ceará, o valor usual é 3.630 m². Na Bahia, a "tarefa baiana" corresponde a
+    30×30 braças = 4.356 m². Se o seu documento ou região usa outro valor, converta manualmente: divida a área em m² pelo valor da tarefa da sua região.</div>
+  </div>
+  <div class="acordeao">
+    <div class="acordeao-cabecalho">Conversão de braças <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="acordeao-corpo">Este app usa 1 braça = 2,20 m, valor comum em medições rurais no Brasil. Atenção: o comprimento da braça varia
+    conforme a região e a época do documento (é possível encontrar braças de 2,00 m a 2,50 m em escrituras antigas). Se o seu documento especificar
+    outro valor, converta as medidas para metros manualmente antes de informá-las aqui.</div>
+  </div>
+</main>
+
+<!-- ====================== FOLHA DE IMPRESSÃO / PDF ====================== -->
+<div id="folha-impressao">
+  <div class="rel-cab">
+    <div>
+      <h2 style="margin:0;">Relatório de Cubação de Terra</h2>
+      <p style="margin:2px 0 0;color:#555;">Cálculo de área a partir dos lados do terreno</p>
+    </div>
+    <div style="text-align:right;font-size:12px;color:#555;"><div id="relData"></div></div>
+  </div>
+  <div class="rel-grid">
+    <div><span>Propriedade</span><strong id="relPropriedade">—</strong></div>
+    <div><span>Proprietário</span><strong id="relProprietario">—</strong></div>
+    <div><span>Município</span><strong id="relMunicipio">—</strong></div>
+    <div><span>Unidade informada</span><strong id="relUnidade">—</strong></div>
+  </div>
+  <h3 style="font-size:14px;border-bottom:1px solid #ccc;padding-bottom:6px;">Lados informados</h3>
+  <div id="relMedidas" style="font-size:12.5px;margin-bottom:16px;"></div>
+  <h3 style="font-size:14px;border-bottom:1px solid #ccc;padding-bottom:6px;">Resultado</h3>
+  <div id="relResultado" style="font-size:13px;margin-bottom:16px;"></div>
+  <h3 style="font-size:14px;border-bottom:1px solid #ccc;padding-bottom:6px;">Esboço do terreno</h3>
+  <img id="relImagem" style="max-width:100%;border:1px solid #ccc;border-radius:8px;">
+</div>
+
+<footer class="rodape-app">Cubação de Terra — ferramenta de apoio. Para fins legais (escritura, georreferenciamento, INCRA), consulte um profissional de agrimensura habilitado.</footer>
+
+<script>
+/* =========================================================================================
+   CUBAÇÃO DE TERRA — VERSÃO SIMPLIFICADA (apenas lados, 3+, metros ou braças)
+   1. Tema
+   2. Geração dinâmica dos campos de lados
+   3. Motor geométrico: Heron (n=3, exato) + polígono cíclico (n>=4, área máxima)
+   4. Desenho em canvas
+   5. Exportação PDF / impressão
+   ========================================================================================= */
+
+/* --------------------------- 1. TEMA --------------------------- */
+const toggleTema = document.getElementById('toggleTema');
+const rotuloTema = document.getElementById('rotuloTema');
+function aplicarTema(escuro){
+  document.body.setAttribute('data-tema', escuro?'escuro':'claro');
+  toggleTema.classList.toggle('ligado', escuro);
+  rotuloTema.textContent = escuro ? 'Modo escuro' : 'Modo claro';
+  localStorage.setItem('cubagem_tema_simples', escuro?'escuro':'claro');
+}
+toggleTema.addEventListener('click', ()=> aplicarTema(document.body.getAttribute('data-tema')!=='escuro'));
+aplicarTema(localStorage.getItem('cubagem_tema_simples')==='escuro');
+document.getElementById('inpData').value = new Date().toISOString().slice(0,10);
+
+// Acordeões
+document.querySelectorAll('.acordeao-cabecalho').forEach(cab=>{
+  cab.addEventListener('click', ()=>cab.parentElement.classList.toggle('aberto'));
+});
+
+/* --------------------------- 2. UNIDADE E CAMPOS DE LADOS --------------------------- */
+const BRACA_EM_METROS = 2.20;
+let unidadeAtual = 'metro';
+
+const opcMetros = document.getElementById('opcMetros');
+const opcBracas = document.getElementById('opcBracas');
+const cabecalhoUnidade = document.getElementById('cabecalhoUnidade');
+
+function selecionarUnidade(u){
+  unidadeAtual = u;
+  opcMetros.classList.toggle('selecionada', u==='metro');
+  opcBracas.classList.toggle('selecionada', u==='braca');
+  cabecalhoUnidade.textContent = u==='metro' ? 'Comprimento (m)' : 'Comprimento (braças)';
+}
+opcMetros.addEventListener('click', ()=>selecionarUnidade('metro'));
+opcBracas.addEventListener('click', ()=>selecionarUnidade('braca'));
+
+const inpLados = document.getElementById('inpLados');
+const corpoLados = document.getElementById('corpoLados');
+const avisoLados = document.getElementById('avisoLados');
+
+function gerarCamposLados(){
+  let n = parseInt(inpLados.value || 0);
+  if(n<3){ n=3; inpLados.value=3; }
+  if(n>30){ n=30; inpLados.value=30; }
+  const valoresAtuais = Array.from(document.querySelectorAll('.in-lado')).map(i=>i.value);
+  corpoLados.innerHTML='';
+  for(let i=0;i<n;i++){
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>L${i+1}</td><td><input type="number" step="any" min="0" class="in-lado" placeholder="0,00" value="${valoresAtuais[i]||''}"></td>`;
+    corpoLados.appendChild(tr);
+  }
+  avisoLados.innerHTML = n>=4
+    ? '<div class="aviso"><span>ℹ️</span><span>Com 4 ou mais lados, o resultado é uma <strong>estimativa (área máxima)</strong> — veja a explicação abaixo, em "Entenda o cálculo".</span></div>'
+    : '<div class="aviso"><span>✅</span><span>Com 3 lados o resultado é <strong>exato</strong> (fórmula de Heron).</span></div>';
+}
+inpLados.addEventListener('input', gerarCamposLados);
+gerarCamposLados();
+
+/* --------------------------- 3. MOTOR GEOMÉTRICO --------------------------- */
+
+// resolve o polígono cíclico (círculo circunscrito) dado os lados, via bisseção no raio R
+function resolverPoligonoCiclico(lados){
+  const n = lados.length;
+  const maiorLado = Math.max(...lados);
+  const somaLados = lados.reduce((a,b)=>a+b,0);
+  const restante = somaLados - maiorLado;
+  if(maiorLado >= restante){
+    return {valido:false};
+  }
+  function somaAngulos(R){
+    let s=0;
+    for(const l of lados){
+      let x = l/(2*R);
+      if(x>1) x=1;
+      s += 2*Math.asin(x);
+    }
+    return s;
+  }
+  let Rlo = maiorLado/2 + 1e-9;
+  let Rhi = somaLados; // limite superior seguro: ângulos somam quase 0
+  // garante que a função (decrescente em R) cruza 2π no intervalo
+  for(let i=0;i<200 && somaAngulos(Rhi) > 2*Math.PI; i++){ Rhi *= 2; }
+  for(let iter=0; iter<100; iter++){
+    const Rmid = (Rlo+Rhi)/2;
+    if(somaAngulos(Rmid) > 2*Math.PI) Rlo = Rmid; else Rhi = Rmid;
+  }
+  const R = (Rlo+Rhi)/2;
+  let area = 0;
+  const angulosCentrais = [];
+  for(const l of lados){
+    let x = l/(2*R);
+    if(x>1) x=1;
+    const theta = 2*Math.asin(x);
+    angulosCentrais.push(theta);
+    area += 0.5*R*R*Math.sin(theta);
+  }
+  // vértices (para desenho), centrados na origem
+  const vertices = [];
+  let cum = 0;
+  for(let i=0;i<n;i++){
+    vertices.push({x:R*Math.cos(cum), y:R*Math.sin(cum)});
+    cum += angulosCentrais[i];
+  }
+  return {valido:true, area, perimetro:somaLados, R, vertices};
+}
+
+function calcularHeron(lados){
+  const [a,b,c] = lados;
+  const s = (a+b+c)/2;
+  const termo = s*(s-a)*(s-b)*(s-c);
+  if(termo<=0) return {valido:false};
+  return {valido:true, area:Math.sqrt(termo), perimetro:a+b+c};
+}
+
+function formatarNum(n,casas){
+  return n.toLocaleString('pt-BR',{minimumFractionDigits:casas,maximumFractionDigits:casas});
+}
+
+let ultimoResultado = null;
+
+const selRegiaoTarefa = document.getElementById('selRegiaoTarefa');
+let ultimasTarefas = 0;
+function atualizarTarefas(){
+  if(!ultimoResultado) return;
+  const m2PorTarefa = parseFloat(selRegiaoTarefa.value);
+  ultimasTarefas = ultimoResultado.area / m2PorTarefa;
+  document.getElementById('valTarefas').textContent = formatarNum(ultimasTarefas,3)+' tarefas';
+  atualizarValor();
+}
+selRegiaoTarefa.addEventListener('change', atualizarTarefas);
+
+function formatarMoeda(v){
+  return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+}
+
+const inpValorTarefa = document.getElementById('inpValorTarefa');
+
+function atualizarValor(){
+  if(!ultimoResultado) return;
+  const valorTarefa = parseFloat(inpValorTarefa.value);
+  const valorTotal = (!isNaN(valorTarefa) && valorTarefa>=0) ? ultimasTarefas * valorTarefa : null;
+  document.getElementById('valTotalTerreno').textContent = valorTotal!==null ? formatarMoeda(valorTotal) : '—';
+}
+inpValorTarefa.addEventListener('input', atualizarValor);
+
+document.getElementById('btnCalcular').addEventListener('click', ()=>{
+  const inputs = Array.from(document.querySelectorAll('.in-lado'));
+  const brutos = inputs.map(i=>parseFloat(i.value));
+  if(brutos.some(v=>isNaN(v) || v<=0)){
+    alert('Preencha todos os lados com valores maiores que zero.');
+    return;
+  }
+  const fator = unidadeAtual==='braca' ? BRACA_EM_METROS : 1;
+  const ladosMetros = brutos.map(v=>v*fator);
+  const n = ladosMetros.length;
+
+  let resultado;
+  let exato;
+  if(n===3){
+    resultado = calcularHeron(ladosMetros);
+    exato = true;
+    if(!resultado.valido){
+      alert('Essas três medidas não formam um triângulo fechado (um lado é maior ou igual à soma dos outros dois). Confira os valores.');
+      return;
+    }
+  } else {
+    resultado = resolverPoligonoCiclico(ladosMetros);
+    exato = false;
+    if(!resultado.valido){
+      alert('Essas medidas não formam um polígono fechado (um lado é maior ou igual à soma de todos os outros). Confira os valores.');
+      return;
+    }
+  }
+
+  ultimoResultado = {
+    area: resultado.area,
+    perimetro: resultado.perimetro,
+    n, exato,
+    lados: brutos,
+    unidade: unidadeAtual,
+    vertices: resultado.vertices || null
+  };
+
+  document.getElementById('semResultado').style.display='none';
+  document.getElementById('blocoResultado').style.display='block';
+  document.getElementById('cartaoExportar').style.display='block';
+  document.getElementById('cartaoValor').style.display='block';
+
+  document.getElementById('valArea').innerHTML = formatarNum(resultado.area,2)+' m²';
+  document.getElementById('seloArea').innerHTML = exato
+    ? '<span class="selo exato">EXATO</span>' : '<span class="selo estimativa">ESTIMATIVA</span>';
+  document.getElementById('valAreaHa').textContent = formatarNum(resultado.area/10000,4)+' ha';
+  document.getElementById('valPerimetro').textContent = formatarNum(resultado.perimetro,2)+' m';
+  document.getElementById('valNLados').textContent = n;
+  atualizarTarefas();
+
+  document.getElementById('observacaoMetodo').innerHTML = exato
+    ? 'Cálculo exato pela <strong>Fórmula de Heron</strong> (3 lados sempre formam um único triângulo possível).'
+    : 'Cálculo pelo método do <strong>polígono cíclico</strong>: representa a maior área possível para este conjunto de lados. A área real do terreno pode ser igual ou menor, dependendo dos ângulos verdadeiros. Veja "Entenda o cálculo" abaixo.';
+
+  if(resultado.vertices){
+    document.getElementById('cartaoEsboco').style.display='block';
+    desenharTerreno(resultado.vertices);
+  } else {
+    document.getElementById('cartaoEsboco').style.display='none';
+  }
+});
+
+/* --------------------------- 4. DESENHO EM CANVAS --------------------------- */
+function corVariavel(nome){
+  return getComputedStyle(document.body).getPropertyValue(nome).trim();
+}
+function desenharTerreno(vertices){
+  const canvas = document.getElementById('canvasTerreno');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+
+  const corVerde = corVariavel('--verde-600') || '#3f9660';
+  const corVerdeEscuro = corVariavel('--verde-800') || '#1f4d36';
+  const corTexto = corVariavel('--texto') || '#1d2621';
+
+  const xs = vertices.map(v=>v.x), ys = vertices.map(v=>v.y);
+  const minX=Math.min(...xs), maxX=Math.max(...xs), minY=Math.min(...ys), maxY=Math.max(...ys);
+  const pad = 40;
+  const escala = Math.min((W-2*pad)/(maxX-minX||1), (H-2*pad)/(maxY-minY||1));
+
+  function toCanvas(p){
+    return { x: pad + (p.x-minX)*escala, y: H - pad - (p.y-minY)*escala };
+  }
+
+  ctx.beginPath();
+  vertices.forEach((v,i)=>{
+    const p = toCanvas(v);
+    if(i===0) ctx.moveTo(p.x,p.y); else ctx.lineTo(p.x,p.y);
+  });
+  ctx.closePath();
+  ctx.fillStyle = corVerde+'33';
+  ctx.fill();
+  ctx.lineWidth = 2.4;
+  ctx.strokeStyle = corVerdeEscuro;
+  ctx.stroke();
+
+  ctx.font = '11px "IBM Plex Mono", monospace';
+  vertices.forEach((v,i)=>{
+    const p = toCanvas(v);
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,4,0,Math.PI*2);
+    ctx.fillStyle = corVerdeEscuro;
+    ctx.fill();
+    ctx.fillStyle = corTexto;
+    ctx.fillText('V'+(i+1), p.x+7, p.y-7);
+
+    const prox = vertices[(i+1)%vertices.length];
+    const pProx = toCanvas(prox);
+    const dist = Math.hypot(prox.x-v.x, prox.y-v.y);
+    const mx = (p.x+pProx.x)/2, my=(p.y+pProx.y)/2;
+    ctx.fillStyle = corVerde;
+    ctx.fillText(dist.toFixed(1)+'m', mx+4, my-4);
+  });
+}
+
+/* --------------------------- 5. IMPRESSÃO / PDF --------------------------- */
+function nomeUnidade(u){ return u==='braca' ? 'Braças (1 = 2,20 m)' : 'Metros'; }
+
+function montarFolhaRelatorio(){
+  document.getElementById('relData').textContent = 'Emitido em ' + new Date().toLocaleDateString('pt-BR');
+  document.getElementById('relPropriedade').textContent = document.getElementById('inpPropriedade').value || '—';
+  document.getElementById('relProprietario').textContent = document.getElementById('inpProprietario').value || '—';
+  document.getElementById('relMunicipio').textContent = document.getElementById('inpMunicipio').value || '—';
+  document.getElementById('relUnidade').textContent = nomeUnidade(ultimoResultado ? ultimoResultado.unidade : unidadeAtual);
+
+  let medidas = '<table style="width:100%;border-collapse:collapse;"><tr>';
+  const lados = ultimoResultado ? ultimoResultado.lados : [];
+  medidas += lados.map((l,i)=>`<td style="padding:3px 8px;">L${i+1}: ${l}</td>`).join('');
+  medidas += '</tr></table>';
+  document.getElementById('relMedidas').innerHTML = medidas;
+
+  if(ultimoResultado){
+    const m2PorTarefa = parseFloat(selRegiaoTarefa.value);
+    const tarefas = ultimoResultado.area / m2PorTarefa;
+    const rotuloRegiaoTarefa = selRegiaoTarefa.options[selRegiaoTarefa.selectedIndex].text;
+
+    const valorTarefa = parseFloat(inpValorTarefa.value);
+    const temValor = !isNaN(valorTarefa) && valorTarefa>=0;
+    const valorTotal = temValor ? tarefas*valorTarefa : null;
+
+    document.getElementById('relResultado').innerHTML = `
+      <div style="background:#eaf5ee;border:1px solid #bfe0cc;border-radius:8px;padding:10px 14px;margin-bottom:12px;">
+        <span style="font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#1f4d36;font-weight:600;">Área em tarefas (${rotuloRegiaoTarefa.split('—')[0].trim()})</span><br>
+        <span style="font-size:24px;font-weight:800;color:#153524;">${formatarNum(tarefas,3)} tarefas</span>
+      </div>
+      <strong>Área:</strong> ${formatarNum(ultimoResultado.area,2)} m² (${formatarNum(ultimoResultado.area/10000,4)} ha)
+      — ${ultimoResultado.exato ? 'valor exato' : 'estimativa (área máxima possível)'}<br>
+      <strong>Referência de tarefa usada:</strong> ${rotuloRegiaoTarefa}<br>
+      <strong>Perímetro:</strong> ${formatarNum(ultimoResultado.perimetro,2)} m<br>
+      <strong>Número de lados:</strong> ${ultimoResultado.n}<br>
+      ${temValor ? `<strong>Valor de 1 tarefa:</strong> ${formatarMoeda(valorTarefa)}<br><strong>Valor total do terreno:</strong> ${formatarMoeda(valorTotal)}` : ''}`;
+  } else {
+    document.getElementById('relResultado').innerHTML = '<em>Nenhum cálculo realizado ainda.</em>';
+  }
+
+  const canvas = document.getElementById('canvasTerreno');
+  document.getElementById('relImagem').src = (ultimoResultado && ultimoResultado.vertices) ? canvas.toDataURL('image/png') : '';
+}
+
+document.getElementById('btnImprimir').addEventListener('click', ()=>{
+  if(!ultimoResultado){ alert('Calcule a área antes de imprimir.'); return; }
+  montarFolhaRelatorio();
+  window.print();
+});
+
+document.getElementById('btnExportarPDF').addEventListener('click', async ()=>{
+  if(!ultimoResultado){ alert('Calcule a área antes de exportar.'); return; }
+  montarFolhaRelatorio();
+  const folha = document.getElementById('folha-impressao');
+  folha.style.display = 'block';
+  try{
+    const canvasFolha = await html2canvas(folha, {scale:2, backgroundColor:'#ffffff'});
+    const img = canvasFolha.toDataURL('image/png');
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p','mm','a4');
+    // margens no padrão ABNT: superior/esquerda 3cm, inferior/direita 2cm
+    const margEsq = 30, margDir = 20, margSup = 30, margInf = 20;
+    const larguraUtil = 210 - margEsq - margDir;
+    const alturaUtil = 297 - margSup - margInf;
+    const escalaLargura = larguraUtil / canvasFolha.width;
+    const escalaAltura = alturaUtil / canvasFolha.height;
+    const escala = Math.min(escalaLargura, escalaAltura);
+    const larguraImg = canvasFolha.width * escala;
+    const alturaImg = canvasFolha.height * escala;
+    const offsetX = margEsq + (larguraUtil - larguraImg)/2;
+    pdf.addImage(img,'PNG',offsetX,margSup,larguraImg,alturaImg);
+    const nomeArq = (document.getElementById('inpPropriedade').value||'terreno').replace(/\s+/g,'_');
+    pdf.save(`cubacao_${nomeArq}.pdf`);
+  }catch(e){
+    alert('Não foi possível gerar o PDF neste navegador. Tente novamente ou use a opção Imprimir.');
+  }finally{
+    folha.style.display='none';
+  }
+});
+</script>
+</body>
+</html>
